@@ -6,8 +6,8 @@ export const heroContent = {
     "Knowledge drives capability. Capability drives performance. OKQ has the capability and expertise to capture operational knowledge, standardize execution, and build workforce capability — connecting documentation, learning, assessment, troubleshooting, and improvement into one operating system built for safer operations, stronger compliance, and sustainable performance.",
   tagline: "Where expertise becomes a system — and systems create performance.",
   buttons: [
-    { id: 1, label: "Explore the Platform", href: "#platform", variant: "primary", hasArrow: true },
-    { id: 2, label: "Book an Industrial Discovery Session", href: "#book", variant: "outline", hasArrow: false },
+    { id: 1, label: "Explore the Platform", href: "/platform", variant: "primary", hasArrow: true },
+    { id: 2, label: "Book an Industrial Discovery Session", href: "/signup", variant: "outline", hasArrow: false },
   ],
 };
 

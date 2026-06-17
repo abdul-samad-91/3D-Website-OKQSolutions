@@ -1,35 +1,51 @@
+import operationalExcellence from "../../assets/images/operationalExcellance.jpg";
+import roiPhil from "../../assets/images/roiPhil.jpg";
 import sectionBG from "../../assets/images/sectionBG.jpg";
 
 const standardsCards = [
   {
     id: 1,
     title: "ISO 9001",
-    description: "quality, competence, documented information, continual improvement.",
+    description: "quality, competence, documented information, continual improvement",
+    image: roiPhil,
+    imagePosition: "center",
   },
   {
     id: 2,
     title: "ISO 45001",
-    description: "safety integration, workforce, awareness, risk control",
+    description: "safety integration, workforce awareness, risk control",
+    image: operationalExcellence,
+    imagePosition: "center",
   },
   {
     id: 3,
     title: "IATF 16949",
     description: "process control, traceability, competency verification",
+    image: sectionBG,
+    imagePosition: "center 42%",
   },
   {
     id: 4,
     title: "VDA 6.3",
     description: "process-audit rigor and operational consistency",
+    image: roiPhil,
+    imagePosition: "right center",
   },
   {
     id: 5,
     title: "Lean Manufacturing",
     description: "standard work, visual management, waste reduction",
+    image: operationalExcellence,
+    imagePosition: "center 34%",
+    wide: true,
   },
   {
     id: 6,
     title: "Industry 5.0",
     description: "human-centric, resilient, sustainable performance",
+    image: sectionBG,
+    imagePosition: "center",
+    wide: true,
   },
 ];
 
@@ -42,107 +58,77 @@ const kpiItems = [
 
 const StandardsCompliance = () => {
   return (
-    <section
-      className="relative py-20 px-6 overflow-hidden"
-      style={{
-        backgroundImage: `url(${sectionBG})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[#02667E]/90" />
+    <section id="standards-compliance" className="relative overflow-hidden bg-[#0A4B5B] px-6 py-16 lg:py-20">
+      <div className="absolute -left-48 -top-48 h-[520px] w-[620px] rounded-full border-[120px] border-[#17697A]/35" />
+      <div className="absolute -right-56 -top-16 h-[560px] w-[640px] rounded-full border-[120px] border-[#17697A]/30" />
+      <div className="absolute -bottom-64 left-1/3 h-[520px] w-[620px] rounded-full border-[120px] border-[#17697A]/25" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
-        {/* Section Badge */}
-        <div className="flex items-center justify-center gap-3 mb-8">
-          <span className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[13px] font-bold shrink-0 border-2 border-white/40 bg-white/20">
+        <div className="flex items-center justify-center gap-3 mb-6">
+          <span className="w-5 h-5 rounded-full bg-white flex items-center justify-center text-[#0A8EA5] text-[10px] font-bold shrink-0">
             4
           </span>
-          <div className="h-px w-10 bg-white/40" />
-          <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-white">
-            Standards & Compliance
+          <div className="h-px w-12 bg-white/70" />
+          <span className="text-[13px] font-medium tracking-[0.16em] uppercase text-white">
+            Standards &amp; Compliance
           </span>
         </div>
 
-        {/* Heading */}
-        <h2 className="text-[2.2rem] lg:text-[2.8rem] font-extrabold text-white text-center mb-6 leading-tight max-w-4xl mx-auto">
-          Built on standards. Designed for compliance. Engineered for performance.
+        <h2 className="text-[32px] lg:text-[40px] font-bold text-white text-center leading-tight max-w-4xl mx-auto">
+          Built on standards. Designed for compliance.
+          <br />
+          Engineered for performance.
         </h2>
 
-        {/* Body */}
-        <p className="text-center text-[14px] text-white/80 leading-relaxed max-w-2xl mx-auto mb-12">
-          Compliance should strengthen operations, not slow them down. OKQ is designed around globally recognized
-          standards and proven operational disciplines, turning requirements into practical systems that strengthen
-          execution and consistency. (This is the only section that details standards.)
+        <p className="mt-6 text-center text-[13px] text-white/72 leading-6 max-w-2xl mx-auto">
+          Compliance should strengthen operations, not slow them down. OKQ is designed around
+          globally recognized standards and proven operational disciplines, turning requirements
+          into practical systems that strengthen execution and consistency.
         </p>
 
-        {/* Standards Grid - 4 columns top row, 2 columns bottom row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-          {standardsCards.slice(0, 4).map((card) => (
-            <div
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {standardsCards.map((card) => (
+            <article
               key={card.id}
-              className="rounded-xl border border-white/20 bg-white/10 backdrop-blur-sm p-5 flex flex-col gap-3"
+              className={`overflow-hidden rounded-lg border border-white/10 bg-[#125D6D] shadow-[0_18px_42px_rgba(0,0,0,0.18)] ${
+                card.wide ? "lg:col-span-2" : ""
+              }`}
             >
-              {/* Icon */}
-              <div className="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white/80 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                </svg>
-                <h4 className="text-[15px] font-bold text-white">{card.title}</h4>
+              <div
+                className="h-[86px] bg-cover bg-center"
+                style={{
+                  backgroundImage: `linear-gradient(180deg, rgba(10,75,91,0.05), rgba(10,75,91,0.15)), url(${card.image})`,
+                  backgroundPosition: card.imagePosition,
+                }}
+              />
+              <div className="min-h-[86px] bg-[#155F70]/95 px-5 py-4">
+                <h3 className="text-[15px] font-bold text-white">{card.title}</h3>
+                <p className="mt-2 text-[12px] leading-5 text-white/72">{card.description}</p>
               </div>
-              <p className="text-[13px] text-white/70 leading-relaxed">{card.description}</p>
-            </div>
+            </article>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-          {standardsCards.slice(4).map((card) => (
-            <div
-              key={card.id}
-              className="rounded-xl border border-white/20 bg-white/10 backdrop-blur-sm p-5 flex flex-col gap-3"
-            >
-              {/* Icon */}
-              <div className="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white/80 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                </svg>
-                <h4 className="text-[15px] font-bold text-white">{card.title}</h4>
-              </div>
-              <p className="text-[13px] text-white/70 leading-relaxed">{card.description}</p>
-            </div>
-          ))}
-        </div>
+        <div className="mt-12 text-center">
+          <p className="mx-auto max-w-3xl text-[16px] lg:text-[17px] font-medium leading-7 text-white">
+            "Compliance should not slow operations. It should strengthen them. OKQ turns standards
+            into operational capability."
+          </p>
 
-        {/* Additional standards note */}
-        <p className="text-center text-[12px] text-white/60 leading-relaxed max-w-3xl mx-auto mb-10">
-          OKQ also aligns with ISO 12100, ISO 14001, ISO/IEC 17025, the EU Machinery Directive 2006/42/EC, and OSHA 1910 — detailed on the Standards & Compliance page.
-        </p>
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-2 text-[12px] text-white/72">
+            <span className="font-bold text-white">KPI Focus:</span>
+            {kpiItems.map((item) => (
+              <span key={item} className="rounded-full border border-white/18 bg-white/5 px-4 py-1.5">
+                {item}
+              </span>
+            ))}
+          </div>
 
-        {/* Quote */}
-        <p className="text-[16px] lg:text-[18px] font-bold text-white text-center max-w-4xl mx-auto leading-snug mb-5">
-          &ldquo;Compliance should not slow operations. It should strengthen them. OKQ turns standards into operational capability.&rdquo;
-        </p>
-
-        {/* KPI Row */}
-        <div className="flex flex-wrap items-center justify-center gap-3 text-[14px] text-white mb-8">
-          <span className="font-bold">KPI Focus:</span>
-          {kpiItems.map((item, i) => (
-            <span key={item} className="flex items-center gap-3">
-              {i > 0 && <span className="text-white/40">·</span>}
-              <span>{item}</span>
-            </span>
-          ))}
-        </div>
-
-        {/* CTA Button */}
-        <div className="text-center">
           <a
             href="#okq-compliance"
-            className="inline-block px-10 py-4 rounded-full text-white text-[15px] font-semibold hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: "#00B4D7" }}
+            className="mt-8 inline-flex rounded-md border border-white/35 bg-white/5 px-10 py-4 text-[14px] font-bold text-white transition-colors hover:bg-white/12"
           >
-            Explore OKQ Compliance & Standards
+            Explore OKQ Compliance &amp; Standards
           </a>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { navLinks } from "../../data/navData";
 import Logo from "../../assets/images/Logo.svg";
 
@@ -10,20 +11,24 @@ const Navbar = () => {
     <nav className="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="flex items-center shrink-0">
+        <Link to="/" className="flex items-center shrink-0">
           <img src={Logo} alt="OKQ Solutions" className="h-8 w-auto" />
-        </a>
+        </Link>
 
         {/* Desktop Nav Links */}
         <ul className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
             <li key={link.id}>
-              <a
-                href={link.href}
-                className="text-[14px] font-medium text-[#333333] hover:text-[#02667E] transition-colors"
+              <NavLink
+                to={link.href}
+                className={({ isActive }) =>
+                  `text-[14px] font-medium transition-colors ${
+                    isActive ? "text-[#02667E]" : "text-[#333333] hover:text-[#02667E]"
+                  }`
+                }
               >
                 {link.label}
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>
@@ -57,13 +62,19 @@ const Navbar = () => {
             </span>
           </button>
 
-          {/* Contact Us */}
-          <a
-            href="#contact"
+          <Link
+            to="/login"
+            className="text-[13px] font-semibold text-[#333333] hover:text-[#02667E] transition-colors"
+          >
+            Login
+          </Link>
+
+          <Link
+            to="/contactUs"
             className="bg-[#02667E] text-white text-[13px] font-semibold px-6 py-2.5 rounded-md hover:bg-[#024f63] transition-colors"
           >
             Contact Us
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Hamburger */}
@@ -87,23 +98,35 @@ const Navbar = () => {
           <ul className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <li key={link.id}>
-                <a
-                  href={link.href}
-                  className="text-[14px] font-medium text-[#333333] hover:text-[#02667E]"
+                <NavLink
+                  to={link.href}
+                  className={({ isActive }) =>
+                    `text-[14px] font-medium ${
+                      isActive ? "text-[#02667E]" : "text-[#333333] hover:text-[#02667E]"
+                    }`
+                  }
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>
-          <div className="mt-4 pt-4 border-t border-gray-200">
-            <a
-              href="#contact"
-              className="block text-center bg-[#02667E] text-white text-[13px] font-semibold px-6 py-2.5 rounded-md hover:bg-[#024f63]"
+          <div className="mt-4 pt-4 border-t border-gray-200 grid grid-cols-2 gap-3">
+            <Link
+              to="/login"
+              className="block text-center border border-[#02667E] text-[#02667E] text-[13px] font-semibold px-6 py-2.5 rounded-md hover:bg-[#e8f7fa]"
+              onClick={() => setMobileOpen(false)}
             >
-              Contact Us
-            </a>
+              Login
+            </Link>
+            <Link
+              to="/signup"
+              className="block text-center bg-[#02667E] text-white text-[13px] font-semibold px-6 py-2.5 rounded-md hover:bg-[#024f63]"
+              onClick={() => setMobileOpen(false)}
+            >
+              Sign Up
+            </Link>
           </div>
         </div>
       )}

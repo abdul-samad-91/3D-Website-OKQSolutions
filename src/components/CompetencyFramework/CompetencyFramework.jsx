@@ -41,96 +41,77 @@ const kpiItems = [
 const CompetencyFramework = () => {
   return (
     <section
-      className="py-20 px-6"
+      id="competency"
+      className="px-6 py-16 lg:py-20"
       style={{
         background:
-          "linear-gradient(135deg, #FFFFFF 0%, #FDFEFE 8.33%, #FAFDFE 16.67%, #F8FCFD 25%, #F5FBFC 33.33%, #F3FAFC 41.67%, #F0F9FB 50%, #EEF9FB 62.5%, #ECF8FB 75%, #EAF8FA 87.5%, #E8F7FA 100%)",
+          "linear-gradient(135deg, #EAF8FA 0%, #F5FBFC 34%, #FFFFFF 62%, #EEF9FB 100%)",
       }}
     >
-      <div className="max-w-6xl mx-auto">
-        {/* Section Badge */}
-        <div className="flex items-center justify-center gap-3 mb-8">
-          <span
-            className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[13px] font-bold shrink-0"
-            style={{ backgroundColor: "#00B4D7" }}
-          >
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-center justify-center gap-3 mb-7">
+          <span className="w-5 h-5 rounded-full bg-[#00B4D7] flex items-center justify-center text-white text-[10px] font-bold shrink-0">
             3
           </span>
-          <div className="h-px w-10 bg-gray-300" />
-          <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#00B4D7]">
-            The OKQ Competency Framework™
+          <div className="h-px w-12 bg-[#00B4D7]" />
+          <span className="text-[13px] font-medium tracking-[0.16em] uppercase text-[#00A8C8]">
+            The OKQ Competency Framework&trade;
           </span>
         </div>
 
-        {/* Heading */}
-        <h2 className="text-[2.5rem] lg:text-[3rem] font-extrabold text-[#0d1b2a] text-center mb-5 leading-tight">
+        <h2 className="text-[38px] lg:text-[44px] font-bold text-[#0d1b2a] text-center leading-tight">
           Capability drives performance.
         </h2>
 
-        {/* Subtitle */}
-        <p className="text-center text-[16px] font-bold text-[#02667E] mb-5">
+        <p className="mt-5 text-center text-[16px] font-bold text-[#02667E]">
           Workforce capability is a competitive advantage.
         </p>
 
-        {/* Body */}
-        <p className="text-center text-[14px] text-gray-600 leading-relaxed max-w-2xl mx-auto mb-12">
-          Experience alone does not guarantee competence. The OKQ Competency Framework™ defines capability
-          clearly, develops it systematically, and verifies it in practice — a structured progression for every stage of
+        <p className="mt-5 text-center text-[14px] text-[#4D5A60] leading-6 max-w-3xl mx-auto">
+          Experience alone does not guarantee competence. The OKQ Competency Framework&trade; defines capability
+          clearly, develops it systematically, and verifies it in practice - a structured progression for every stage of
           workforce maturity.
         </p>
 
-        {/* Competency Levels Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 mb-14">
+        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {competencyLevels.map((level) => (
-            <div
+            <article
               key={level.id}
-              className="rounded-2xl border border-gray-200 bg-white p-6 flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow"
+              className="min-h-[188px] rounded-lg border border-[#BFEAF1] bg-white/80 p-6 shadow-[0_16px_34px_rgba(2,102,126,0.12)]"
             >
-              {/* Number Circle */}
-              <div
-                className="w-12 h-12 rounded-full flex items-center justify-center text-white text-[18px] font-bold shadow-md"
-                style={{ backgroundColor: "#00B4D7" }}
-              >
+              <div className="w-14 h-14 rounded-md bg-[#00A8C8] flex items-center justify-center text-white text-[18px] font-bold shadow-[0_8px_18px_rgba(0,168,200,0.22)]">
                 {level.number}
               </div>
-
-              {/* Title */}
-              <h4 className="text-[14px] font-bold text-[#0d1b2a] leading-tight">
+              <h3 className="mt-5 text-[13px] font-bold text-[#0d1b2a] leading-snug">
                 {level.title}
-              </h4>
-
-              {/* Description */}
-              <p className="text-[13px] text-gray-500 leading-relaxed">
+              </h3>
+              <p className="mt-3 text-[12px] text-[#4D5A60] leading-5">
                 {level.description}
               </p>
-            </div>
+            </article>
           ))}
         </div>
 
-        {/* Quote */}
-        <p className="text-[18px] lg:text-[20px] font-bold text-[#0d1b2a] text-center max-w-3xl mx-auto leading-snug">
-          &ldquo;Machines can be purchased. Operational capability must be built.&rdquo;
-        </p>
+        <div className="mt-12 text-center">
+          <p className="text-[18px] lg:text-[20px] font-semibold text-[#0d1b2a]">
+            &ldquo;Machines can be purchased. Operational capability must be built.&rdquo;
+          </p>
 
-        {/* KPI Row */}
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-[14px] text-[#0d1b2a]">
-          <span className="font-bold">KPI Focus:</span>
-          {kpiItems.map((item, i) => (
-            <span key={item} className="flex items-center gap-2">
-              {i > 0 && <span className="text-gray-400">·</span>}
-              <span>{item}</span>
-            </span>
-          ))}
-        </div>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[12px] text-[#4D5A60]">
+            <span className="font-bold text-[#0d1b2a]">KPI Focus:</span>
+            {kpiItems.map((item, index) => (
+              <span key={item} className="flex items-center gap-6">
+                <span>{item}</span>
+                {index < kpiItems.length - 1 && <span className="text-[#9CA7AB]">·</span>}
+              </span>
+            ))}
+          </div>
 
-        {/* CTA Button */}
-        <div className="text-center mt-8">
           <a
             href="#standards-compliance"
-            className="inline-block px-10 py-4 rounded-full text-white text-[15px] font-semibold hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: "#00B4D7" }}
+            className="mt-8 inline-flex rounded-md bg-[#00A8C8] px-10 py-3.5 text-[13px] font-bold text-white transition-colors hover:bg-[#058FA3]"
           >
-            Explore Standards & Compliance
+            Explore Standards &amp; Compliance
           </a>
         </div>
       </div>

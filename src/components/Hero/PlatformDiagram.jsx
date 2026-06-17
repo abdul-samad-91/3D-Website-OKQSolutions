@@ -1,5 +1,4 @@
-import { foundationFeatures } from "../../data/heroData";
-import heroGradiant from "../../assets/images/heroGradiant.jpg";
+import Arrow from  "../../assets/images/Container.svg"; 
 
 const moduleIcons = {
   ACADEMY: (
@@ -45,13 +44,13 @@ const moduleIcons = {
 };
 
 const ModuleNode = ({ icon, name, description, descMaxWidth = "auto" }) => (
-  <div className="flex flex-col items-center gap-1.5">
-    <div className="w-[58px] h-[58px] rounded-full bg-[#02667E] text-white flex items-center justify-center shadow-[0_4px_12px_rgba(2,102,126,0.25)]">
+  <div className="flex flex-col items-center ">
+    <div className="w-[45px] h-[45px] rounded-full bg-[#02667E] text-white flex items-center justify-center shadow-[0_4px_12px_rgba(2,102,126,0.25)]">
       {icon}
     </div>
-    <p className="text-[13px] font-bold text-[#1a2e35] tracking-wide">{name}</p>
+    <p className="text-[12px] font-bold text-[#1a2e35] pt-[1px] tracking-wide">{name}</p>
     <p
-      className="text-[11px] text-gray-500 text-center leading-tight"
+      className="text-[10px] text-gray-500 text-center leading-tight"
       style={{ maxWidth: descMaxWidth }}
     >
       {description}
@@ -61,219 +60,457 @@ const ModuleNode = ({ icon, name, description, descMaxWidth = "auto" }) => (
 
 const PlatformDiagram = () => {
   return (
-    <div className="relative w-[720px] h-[800px] mx-auto">
-      {/* Background SVG: rings + dashed connectors */}
-      <svg
-        className="absolute inset-0 w-full h-full pointer-events-none"
-        viewBox="0 0 720 800"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        {/* Intelligence Layer - large flat ellipse */}
-        <ellipse cx="360" cy="180" rx="335" ry="135" stroke="#7BB5C2" strokeWidth="1.4" fill="none" opacity="0.85" />
-
-        {/* Pedestal/shelf under OKQ INTELLIGENCE LAYER */}
-        <ellipse cx="360" cy="225" rx="90" ry="10" stroke="#7BB5C2" strokeWidth="1" fill="none" opacity="0.6" />
-        <ellipse cx="360" cy="220" rx="90" ry="10" stroke="#7BB5C2" strokeWidth="1" fill="none" opacity="0.4" />
-
-        {/* Operational Layer ellipse */}
-        <ellipse cx="360" cy="370" rx="295" ry="115" stroke="#7BB5C2" strokeWidth="1.4" fill="none" opacity="0.85" />
-
-        {/* Dashed connectors - LEFT side to foundation */}
-        <path d="M 80 540 Q 200 580 320 660" stroke="#3FB1C5" strokeWidth="1" strokeDasharray="4 4" opacity="0.7" />
-        <path d="M 80 585 Q 190 615 305 670" stroke="#3FB1C5" strokeWidth="1" strokeDasharray="4 4" opacity="0.7" />
-        <path d="M 80 630 Q 180 645 295 685" stroke="#3FB1C5" strokeWidth="1" strokeDasharray="4 4" opacity="0.7" />
-        <path d="M 80 675 Q 180 685 290 700" stroke="#3FB1C5" strokeWidth="1" strokeDasharray="4 4" opacity="0.7" />
-
-        {/* Dashed connectors - RIGHT side to foundation */}
-        <path d="M 640 540 Q 520 580 400 660" stroke="#3FB1C5" strokeWidth="1" strokeDasharray="4 4" opacity="0.7" />
-        <path d="M 640 585 Q 530 615 415 670" stroke="#3FB1C5" strokeWidth="1" strokeDasharray="4 4" opacity="0.7" />
-        <path d="M 640 630 Q 540 645 425 685" stroke="#3FB1C5" strokeWidth="1" strokeDasharray="4 4" opacity="0.7" />
-        <path d="M 640 675 Q 540 685 430 700" stroke="#3FB1C5" strokeWidth="1" strokeDasharray="4 4" opacity="0.7" />
-      </svg>
-
+    <div className="relative flex flex-col gap-12 w-[1020px] h-[800px]">
       {/* ====== INTELLIGENCE LAYER ====== */}
+      <div className="relative w-full top-32 h-[170px] p-[2px] rounded-[200%] bg-gradient-to-br from-[#02667E] to-[#E4F0F9]">
+        <div className="relative  w-full h-full rounded-[200%] bg-[#F0F9FB]">
+            {/* OKQ INTELLIGENCE LAYER (center label) */}
+            <div className="absolute top-15 left-1/2 -translate-x-1/2 text-center">
+              {/* <p className="text-[34px] font-serif italic text-[#1a2e35] leading-none">OKQ</p> */}
+              <p className="relative top-[10px] text-[10px]  z-40 tracking-[0.15em] text-[#02667E] uppercase font-medium mt-2">
+                Intelligence Layer
+              </p>
+              <div className=" relative w-[200px] h-[30px]  pb-[2px] z-30  rounded-[200%] bg-gradient-to-b  from-[#E4F0F9] to-[#02667E]">        <div className="relative w-full h-full rounded-[200%] bg-[#F0F9FB]">
+              </div></div>
+              <div className="w-[200px] h-[30px]  pb-[2px] z-20 mt-[-20px]  rounded-[200%] bg-gradient-to-b  from-[#E4F0F9] to-[#02667E]">        <div className="relative w-full h-full rounded-[200%] bg-[#F0F9FB]"></div>
+              </div>
+            </div>
 
-      {/* OKQ INTELLIGENCE LAYER (center label) */}
-      <div className="absolute top-[125px] left-1/2 -translate-x-1/2 text-center z-10">
-        <p className="text-[34px] font-serif italic text-[#1a2e35] leading-none">OKQ</p>
-        <p className="text-[11px] tracking-[0.35em] text-[#02667E] uppercase font-medium mt-2">
-          Intelligence Layer
-        </p>
+            {/* ACADEMY - top-left of upper ellipse */}
+            <div className="absolute top-[-5px] left-[110px] z-10">
+              <ModuleNode icon={moduleIcons.ACADEMY} name="ACADEMY" description="Learning" />
+            </div>
+
+            {/* INSIGHT - top-right of upper ellipse */}
+            <div className="absolute top-[-5px] right-[90px] z-10">
+              <ModuleNode icon={moduleIcons.INSIGHT} name="INSIGHT" description="Workforce Intelligence" />
+            </div>
+
+            {/* CORE - bottom-left of upper ellipse */}
+            <div className="absolute bottom-[-50px] left-[50px] z-10">
+              <ModuleNode icon={moduleIcons.CORE} name="CORE" description="Knowledge Management" />
+            </div>
+
+            {/* GUARD - bottom-right of upper ellipse */}
+            <div className="absolute bottom-[-40px] right-[65px] z-10">
+              <ModuleNode icon={moduleIcons.GUARD} name="GUARD" description="Compliance & Risk" />
+            </div>
+        </div>
       </div>
 
-      {/* ACADEMY - top-left of upper ellipse */}
-      <div className="absolute top-[20px] left-[110px] z-10">
-        <ModuleNode icon={moduleIcons.ACADEMY} name="ACADEMY" description="Learning" />
-      </div>
-
-      {/* INSIGHT - top-right of upper ellipse */}
-      <div className="absolute top-[20px] right-[110px] z-10">
-        <ModuleNode icon={moduleIcons.INSIGHT} name="INSIGHT" description="Workforce Intelligence" />
-      </div>
-
-      {/* CORE - bottom-left of upper ellipse */}
-      <div className="absolute top-[200px] left-[60px] z-10">
-        <ModuleNode icon={moduleIcons.CORE} name="CORE" description="Knowledge Management" />
-      </div>
-
-      {/* GUARD - bottom-right of upper ellipse */}
-      <div className="absolute  top-[200px] right-[60px] z-10">
-        <ModuleNode icon={moduleIcons.GUARD} name="GUARD" description="Compliance & Risk" />
-      </div>
 
       {/* ====== OPERATIONAL LAYER ====== */}
-
-      {/* OKQ OPERATIONAL LAYER (center label) */}
-      <div className="absolute top-[325px] left-1/2 -translate-x-1/2 text-center z-10">
-        <p className="text-[30px] font-serif italic text-[#1a2e35] leading-none">OKQ</p>
-        <p className="text-[11px] tracking-[0.35em] text-[#02667E] uppercase font-medium mt-2">
-          Operational Layer
-        </p>
-      </div>
-
-      {/* FLOW - left of lower ellipse */}
-      <div className="absolute top-[385px] left-[80px] z-10">
-        <ModuleNode icon={moduleIcons.FLOW} name="FLOW" description="Process & Execution" />
-      </div>
-
-      {/* RESOLVE - right of lower ellipse */}
-      <div className="absolute top-[385px] right-[60px] z-10">
-        <ModuleNode
-          icon={moduleIcons.RESOLVE}
-          name="RESOLVE"
-          description="Troubleshooting & Problem Solving"
-          descMaxWidth="120px"
-        />
-      </div>
-
-      {/* PULSE - center between ops & foundation */}
-      <div className="absolute top-[470px] left-1/2 -translate-x-1/2 z-10">
-        <ModuleNode icon={moduleIcons.PULSE} name="PULSE" description="Continuous Improvement" />
-      </div>
-
-      {/* ====== GRADIENT FUNNEL ====== */}
-      <div className="absolute top-[510px] left-1/2 -translate-x-1/2 w-[280px] h-[250px] z-0">
-        <img
-          src={heroGradiant}
-          alt=""
-          className="w-full h-full object-contain"
-          style={{ mixBlendMode: "multiply" }}
-        />
-      </div>
-
-      {/* ====== LEFT FEATURES ====== */}
-      <div className="absolute top-[525px] left-0 flex flex-col gap-7 z-10">
-        {foundationFeatures.left.map((f) => (
-          <div key={f.id} className="flex items-center gap-2">
-            <span className="text-[#02667E]">
-              <FeatureIcon type={f.icon} />
-            </span>
-            <span className="text-[13px] font-medium text-[#02667E] italic whitespace-nowrap">
-              {f.label}
-            </span>
-            <span className="w-2 h-2 rounded-full bg-[#3FB1C5] inline-block ml-1" />
+      <div className="relative left-1/2 -translate-x-1/2 z-30 w-[400px] top-32 h-[120px] p-[2px] rounded-[200%] 
+       bg-gradient-to-br from-[#02667E] to-[#E4F0F9]
+      ">
+        <div className="relative  w-full h-full rounded-[200%] bg-[#F0F9FB] z-20">
+          {/* OKQ OPERATIONAL LAYER (center label) */}
+          <div className="absolute shadow-[0_0_10px_10px_#F0F9FB]  top-[-10px] bg-[#F0F9FB] left-1/2 -translate-x-1/2 text-center z-10 ">
+            {/* <p className="text-[30px] font-serif italic text-[#1a2e35] leading-none">OKQ</p> */}
+            <p className="text-[11px] px-2 tracking-[0.35em] text-[#02667E] uppercase font-medium mt-2">
+              Operational Layer
+            </p>
           </div>
-        ))}
-      </div>
 
-      {/* ====== RIGHT FEATURES ====== */}
-      <div className="absolute top-[525px] right-0 flex flex-col gap-7 items-end z-10">
-        {foundationFeatures.right.map((f) => (
-          <div key={f.id} className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#3FB1C5] inline-block mr-1" />
-            <span className="text-[13px] font-medium text-[#02667E] italic whitespace-nowrap">
-              {f.label}
-            </span>
-            <span className="text-[#02667E]">
-              <FeatureIcon type={f.icon} />
-            </span>
+          {/* FLOW - left of lower ellipse */}
+          <div className="absolute top-[30px] left-[-45px] z-10">
+            <ModuleNode icon={moduleIcons.FLOW} name="FLOW" description="Process & Execution" />
           </div>
-        ))}
-      </div>
 
-      {/* ====== OKQ DIGITAL FOUNDATION PILL ====== */}
-      <div className="absolute bottom-[70px] left-1/2 -translate-x-1/2 z-20">
-        <div className="bg-[#02667E] rounded-full py-2 px-7 flex items-center justify-center shadow-md">
-          <span className="text-[10px] text-white uppercase tracking-[0.2em] font-semibold">
-            OKQ Digital Foundation
-          </span>
+          {/* RESOLVE - right of lower ellipse */}
+          <div className="absolute top-[30px] right-[-65px] z-10">
+            <ModuleNode
+              icon={moduleIcons.RESOLVE}
+              name="RESOLVE"
+              description="Troubleshooting & Problem Solving"
+              descMaxWidth="120px"
+            />
+          </div>
+
+          {/* PULSE - center between ops & foundation */}
+          <div className="absolute bottom-[-60px] left-1/2 -translate-x-1/2 z-10">
+            <ModuleNode icon={moduleIcons.PULSE} name="PULSE" description="Continuous Improvement" />
+          </div>
         </div>
       </div>
 
-      {/* ====== STEPS BAR ====== */}
-      <div className="absolute bottom-[30px] left-1/2 -translate-x-1/2 z-10">
-        <div className="bg-[#02667E] rounded-md py-1.5 px-4 flex items-center gap-2">
-          {foundationFeatures.steps.map((step, idx) => (
-            <span key={step} className="flex items-center gap-2">
-              <span className="text-[9px] text-white uppercase font-medium tracking-[0.1em]">
-                {step}
-              </span>
-              {idx < foundationFeatures.steps.length - 1 && (
-                <span className="text-[#7BB5C2] text-[8px]">●</span>
-              )}
-            </span>
-          ))}
-        </div>
-      </div>
 
-      {/* ====== BOTTOM TAGLINE ====== */}
-      <p className="absolute bottom-[8px] left-1/2 -translate-x-1/2 text-[8px] text-gray-400 uppercase tracking-[0.2em] whitespace-nowrap font-medium">
-        One Platform. One Operating Model. Unlimited Potential.
-      </p>
+    <div>
+    {/* <div className="shadow-[0_0_30px_black]  "> */}
+    <div className=" relative left-1/2 -translate-x-1/2 top-[-50px] w-[400px] h-[250px] bg-gradient-to-t from-[#00B4D7] via-[#F0F9FB] to-[#F0F9FB] [clip-path:polygon(0_36%,100%_36%,60%_100%,40%_100%)] flex items-end justify-center z-20 justify-center">
+    <div className="relative w-[120px] h-[60px]">
+      {/* vertical waves */}
+      <svg
+        viewBox="0 0 100 300"
+        className="absolute opacity-30 bottom-0 w-[100px] h-[200px]"
+      >
+        <path
+          d="M10 10
+            C90 60, 90 140, 50 180
+            C10 220, 10 280, 90 290"
+          fill="none"
+          stroke="#F0F9FB"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </svg>
+
+      
+      <svg
+        viewBox="0 0 100 300"
+        className="absolute  opacity-30 bottom-[10px] left-[-10px] w-[100px] h-[200px]"
+      >
+        <path
+          d="M10 10
+            C90 60, 90 140, 50 180
+            C10 220, 10 280, 90 290"
+          fill="none"
+          stroke="#F0F9FB"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </svg>
+      
+      <svg
+        viewBox="0 0 100 300"
+        className="absolute opacity-30 bottom-0 rotate-20 right-[-20px] w-[100px] h-[200px]"
+      >
+        <path
+          d="M10 10
+            C90 60, 90 140, 50 180
+            C10 220, 10 280, 90 290"
+          fill="none"
+          stroke="#F0F9FB"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </svg>
+
+      <svg
+        viewBox="0 0 100 300"
+        className="absolute rotate-200 opacity-30 bottom-[-140px] right-[30px] w-[100px] h-[200px]"
+      >
+        <path
+          d="M10 10
+            C90 60, 90 140, 50 180
+            C10 220, 10 280, 90 290"
+          fill="none"
+          stroke="#F0F9FB"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </svg>
+
+      <svg
+        viewBox="0 0 100 300"
+        className="absolute rotate-200 opacity-30 bottom-[-110px] right-[35px] w-[100px] h-[200px]"
+      >
+        <path
+          d="M10 10
+            C90 60, 90 140, 50 180
+            C10 220, 10 280, 90 290"
+          fill="none"
+          stroke="#F0F9FB"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </svg>
+
+      <svg
+        viewBox="0 0 100 300"
+        className="absolute rotate-200 opacity-30 bottom-[-120px] right-[15px] w-[100px] h-[200px]"
+      >
+        <path
+          d="M10 10
+            C90 60, 90 140, 50 180
+            C10 220, 10 280, 90 290"
+          fill="none"
+          stroke="#F0F9FB"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </svg>
+      <svg
+        viewBox="0 0 100 300"
+        className="absolute rotate-200 opacity-30 bottom-[-110px] right-[5px] w-[100px] h-[200px]"
+      >
+        <path
+          d="M10 10
+            C90 60, 90 140, 50 180
+            C10 220, 10 280, 90 290"
+          fill="none"
+          stroke="#F0F9FB"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </svg>
+      {/* logo */}
+      {/* <img src={logo} className="absolute bottom-[-8px] w-full h-[50px]  " alt="logoImage" /> */}
+   <svg
+    viewBox="0 13 120 60"
+    className="absolute bottom-[-20px] w-full h-[50px] bg-gradient-to-t from-[#10b4d7] via-[#46bddb] to-[#67c6e1] "
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M20 30 C20 10, 45 10, 60 30 C75 50, 100 50, 100 30 C100 10, 75 10, 60 30 C45 50, 20 50, 20 30Z"
+      stroke="#0097B2"
+      strokeWidth="3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      opacity="0.75"
+    />
+  </svg> 
+</div>
     </div>
+      <div className="absolute left-75 rotate-35 bottom-[210px] bg-black w-[25px] h-[150px] shadow-[20px_0_30px_9px_#00B4D7]"> </div>
+      <div className="absolute right-77 rotate-145 bottom-[210px] bg-black w-[25px] h-[150px] shadow-[20px_0_30px_10px_#00B4D7]"> </div> 
+
+      
+      <div className="relative flex flex-col  items-center ">
+        {/* left side lines  */}
+        <div className="">
+          <div className="absolute top-[-150px] left-0  w-[120px] ">
+            <p className="relative top-10 left-[-15px] text-[10px] text-[#00B4D7]">Unified Data</p>
+            <div className="relative top-7 left-12 z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
+            <svg
+              viewBox="0 45 300 100"
+              className="absolute top-[38px] left-[50px] inset-0 w-full h-[80px]"
+              fill="none"
+            >
+              <path
+                d="M20 20 C120 20, 180 180, 280 180"
+                stroke="#00B4D7"
+                strokeWidth="3"
+                strokeDasharray="6 6"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </svg>
+          </div>
+          <div className="absolute top-[-130px] left-0  w-[120px] ">
+            <p className="relative top-12 left-[-30px] text-[10px] text-[#00B4D7]">Enterprise Security</p>
+            <div className="relative top-9 left-16 z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
+            <svg
+              viewBox="0 65 300 100"
+              className=" absolute rotate-350 top-[40px] left-[67px] inset-0 w-[101px] h-[80px]"
+              fill="none"
+            >
+              <path
+                d="M20 20 C120 20, 180 180, 280 180"
+                stroke="#00B4D7"
+                strokeWidth="3"
+                strokeDasharray="6 6"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </svg>
+          </div>
+          <div className="absolute top-[-130px] left-0  w-[120px] ">
+            <p className="relative top-18.5 left-[15px] text-[10px] text-[#00B4D7]">Cloud Native</p>
+            <div className="relative top-15.5 left-20 z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
+            <svg
+              viewBox="0 65 250 100"
+              className=" absolute rotate-[-10] top-[77px] left-[87px] inset-0 w-[101px] h-[80px]"
+              fill="none"
+            >
+              <path
+                d="M-90 -30 C80 120, 180 20, 280 120"
+                stroke="#00B4D7"
+                strokeWidth="3"
+                strokeDasharray="6 6"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </svg>
+          </div>
+          <div className="absolute top-[-130px] left-0  w-[120px] ">
+            <p className="relative top-24 left-[-43px] text-[10px] text-[#00B4D7]">Realtime Analytics</p>
+            <div className="relative top-21 left-10 z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
+            <svg
+              viewBox="0 65 250 100"
+              className=" absolute rotate-160 top-[47px] left-[40px] inset-0 w-[151px] h-[80px]"
+              fill="none"
+            >
+              <path
+                d="M20 20 C80 120, 180 40, 380 220"
+                stroke="#00B4D7"
+                strokeWidth="2"
+                strokeDasharray="2 6"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <p  className="text-[10.56px] text-white py-2 rounded-b-full px-8 relative top-[-50px] bg-[linear-gradient(180deg,#04798A_0%,#04798A_45%,#00AFCF_100%)] tracking-[0.5px] font-700 z-30">OKQ DIGITAL FOUNDATION</p>
+        <div>
+          <div className="absolute top-[-150px] right-0  w-[120px] ">
+            <p className="relative top-10 right-[-50px] text-[10px] text-[#00B4D7]">Any Device</p>
+            <div className="relative top-7 left-9 z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
+            <svg
+              viewBox="0 45 300 100"
+              className="absolute top-[37px] right-19 rotate-120  0 w-full h-[80px]"
+              fill="none"
+            >
+              <path
+                d="M20 20 C80 120, 180 20, 280 120"
+                stroke="#00B4D7"
+                strokeWidth="3"
+                strokeDasharray="6 6"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </svg>
+          </div>
+          <div className="absolute top-[-150px] right-0  w-[120px] ">
+            <p className="relative top-16.5 right-[-40px] text-[10px] text-[#00B4D7]">Global Scalability</p>
+            <div className="relative top-13.5 left-7 z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
+            <svg
+              viewBox="0 45 300 100"
+              className="absolute top-[55px] right-21 rotate-125  0 w-[100px] h-[80px]"
+              fill="none"
+            >
+              <path
+                d="M20 20 C80 120, 180 20, 280 150"
+                stroke="#00B4D7"
+                strokeWidth="3"
+                strokeDasharray="6 6"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </svg>
+          </div>
+          <div className="absolute top-[-130px] right-0  w-[120px] ">
+            <p className="relative top-19.25 right-[-28px] text-[10px] text-[#00B4D7]">Seamless Integrations</p>
+            <div className="relative top-16.5 right-[-17px] z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
+            <svg
+              viewBox="0 65 300 100"
+              className=" absolute rotate-123 top-[61px] right-27  w-[101px] h-[80px]"
+              fill="none"
+            >
+              <path
+                d="M-10 -10 C120 20, 180 180, 280 250"
+                stroke="#00B4D7"
+                strokeWidth="3"
+                strokeDasharray="6 6"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </svg>
+          </div>
+          <div className="absolute top-[-150px] right-0  w-[120px] ">
+            <p className="relative top-30 right-[-50px] text-[10px] text-[#00B4D7]">Agentic Powered</p>
+            <div className="relative top-27.5 right-[-40px] z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
+            <svg
+              viewBox="0 45 300 100"
+              className="absolute rotate-135 top-[92px] right-[80px]  w-full h-[80px]"
+              fill="none"
+            >
+              <path
+                d="M-40 -50 C120 20, 180 180, 230 180"
+                stroke="#00B4D7"
+                strokeWidth="3"
+                strokeDasharray="6 6"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <ul className="flex items-center gap-3 text-white py-2 rounded-full px-8 relative top-[-45px] bg-[linear-gradient(90deg,#04798A_0%,#04798A_45%,#00AFCF_100%)] text-[9px] font-700 ">
+          <li className="tracting-[0.5px]">CAPTURE</li>
+          <li><img src={Arrow}className="object-cover w-2 h-2" alt="rightarrow" /></li>
+          <li>STANDARDIZE</li>
+          <li><img src={Arrow}className="object-cover w-2 h-2" alt="rightarrow" /></li>
+          <li>DEVELOP</li>
+          <li><img src={Arrow}className="object-cover w-2 h-2" alt="rightarrow" /></li>
+          <li>VALIDATE</li>
+          <li><img src={Arrow}className="object-cover w-2 h-2" alt="rightarrow" /></li>
+          <li>IMPROVE</li>
+        </ul>
+        <p className="text-[#636E72] text-[10.5px] relative top-[-30px]">ONE PLATFORM. ONE OPERATING MODEL. UNLIMITED POTENTIAL.</p>
+      </div>
+      </div>
+
+
+    </div> 
   );
 };
 
-const FeatureIcon = ({ type }) => {
-  const icons = {
-    database: (
-      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-        <ellipse cx="12" cy="5" rx="8" ry="3" />
-        <path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5" />
-        <path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" />
-      </svg>
-    ),
-    shield: (
-      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
-      </svg>
-    ),
-    cloud: (
-      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 8L5 12l4 4M15 8l4 4-4 4" />
-      </svg>
-    ),
-    chart: (
-      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-        <path strokeLinecap="round" d="M4 20V10M10 20V4M16 20v-8M22 20H2" />
-      </svg>
-    ),
-    device: (
-      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-        <rect x="6" y="3" width="12" height="18" rx="2" />
-        <path strokeLinecap="round" d="M10 18h4" />
-      </svg>
-    ),
-    globe: (
-      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-        <circle cx="12" cy="12" r="9" />
-        <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
-      </svg>
-    ),
-    link: (
-      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M8 10l-4 4 4 4M16 10l4 4-4 4M14 8l-4 12" />
-      </svg>
-    ),
-    ai: (
-      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" />
-        <circle cx="12" cy="12" r="3" />
-      </svg>
-    ),
-  };
-  return icons[type] || null;
-};
-
 export default PlatformDiagram;
+
+
+
+
+
+
+      // {/* ====== GRADIENT FUNNEL ====== */}
+      // <div className="absolute top-[510px] left-1/2 -translate-x-1/2 w-[280px] h-[250px] z-0">
+      //   <img
+      //     src={heroGradiant}
+      //     alt=""
+      //     className="w-full h-full object-contain"
+      //     style={{ mixBlendMode: "multiply" }}
+      //   />
+      // </div>
+
+      // {/* ====== LEFT FEATURES ====== */}
+      // <div className="absolute top-[525px] left-0 flex flex-col gap-7 z-10">
+      //   {foundationFeatures.left.map((f) => (
+      //     <div key={f.id} className="flex items-center gap-2">
+      //       <span className="text-[#02667E]">
+      //         <FeatureIcon type={f.icon} />
+      //       </span>
+      //       <span className="text-[13px] font-medium text-[#02667E] italic whitespace-nowrap">
+      //         {f.label}
+      //       </span>
+      //       <span className="w-2 h-2 rounded-full bg-[#3FB1C5] inline-block ml-1" />
+      //     </div>
+      //   ))}
+      // </div>
+
+      // {/* ====== RIGHT FEATURES ====== */}
+      // <div className="absolute top-[525px] right-0 flex flex-col gap-7 items-end z-10">
+      //   {foundationFeatures.right.map((f) => (
+      //     <div key={f.id} className="flex items-center gap-2">
+      //       <span className="w-2 h-2 rounded-full bg-[#3FB1C5] inline-block mr-1" />
+      //       <span className="text-[13px] font-medium text-[#02667E] italic whitespace-nowrap">
+      //         {f.label}
+      //       </span>
+      //       <span className="text-[#02667E]">
+      //         <FeatureIcon type={f.icon} />
+      //       </span>
+      //     </div>
+      //   ))}
+      // </div>
+
+      // {/* ====== OKQ DIGITAL FOUNDATION PILL ====== */}
+      // <div className="absolute bottom-[70px] left-1/2 -translate-x-1/2 z-20">
+      //   <div className="bg-[#02667E] rounded-full py-2 px-7 flex items-center justify-center shadow-md">
+      //     <span className="text-[10px] text-white uppercase tracking-[0.2em] font-semibold">
+      //       OKQ Digital Foundation
+      //     </span>
+      //   </div>
+      // </div>
+
+      // {/* ====== STEPS BAR ====== */}
+      // <div className="absolute bottom-[30px] left-1/2 -translate-x-1/2 z-10">
+      //   <div className="bg-[#02667E] rounded-md py-1.5 px-4 flex items-center gap-2">
+      //     {foundationFeatures.steps.map((step, idx) => (
+      //       <span key={step} className="flex items-center gap-2">
+      //         <span className="text-[9px] text-white uppercase font-medium tracking-[0.1em]">
+      //           {step}
+      //         </span>
+      //         {idx < foundationFeatures.steps.length - 1 && (
+      //           <span className="text-[#7BB5C2] text-[8px]">●</span>
+      //         )}
+      //       </span>
+      //     ))}
+      //   </div>
+      // </div>
+
+      // {/* ====== BOTTOM TAGLINE ====== */}
+      // <p className="absolute bottom-[8px] left-1/2 -translate-x-1/2 text-[8px] text-gray-400 uppercase tracking-[0.2em] whitespace-nowrap font-medium">
+      //   One Platform. One Operating Model. Unlimited Potential.
+      // </p>
