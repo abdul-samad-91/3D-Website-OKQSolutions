@@ -118,7 +118,7 @@ const PlatformDiagram = () => {
       </div>
 
       {/* GUARD - bottom-right of upper ellipse */}
-      <div className="absolute top-[200px] right-[60px] z-10">
+      <div className="absolute  top-[200px] right-[60px] z-10">
         <ModuleNode icon={moduleIcons.GUARD} name="GUARD" description="Compliance & Risk" />
       </div>
 
