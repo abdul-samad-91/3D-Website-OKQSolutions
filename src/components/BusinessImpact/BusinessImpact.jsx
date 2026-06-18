@@ -66,24 +66,24 @@ const kpiItems = [
 
 const BusinessImpact = () => {
   return (
-    <section id="business-impact" className="relative overflow-hidden bg-[#217C8C] text-white">
-      <div className="px-6 pt-12 pb-[86px] lg:pt-14 lg:pb-[92px]">
+    <section id="business-impact" className="relative overflow-hidden bg-[#02657e] text-white">
+      <div className="px-6  pt-12 pb-[86px] lg:pt-14 lg:pb-[92px]">
         <div className="max-w-5xl mx-auto text-center">
           <div className="flex items-center justify-center gap-3 mb-7">
             <span className="w-5 h-5 rounded-full bg-white flex items-center justify-center text-[#0A8EA5] text-[10px] font-bold shrink-0">
               5
             </span>
             <div className="h-px w-12 bg-white/70" />
-            <span className="text-[11px] font-medium tracking-[0.18em] uppercase text-white">
+            <span className="text-[18px]  tracking-[0.18em] uppercase text-white">
               Business Impact &amp; ROI
             </span>
           </div>
 
-          <h2 className="text-[34px] lg:text-[40px] font-bold leading-tight">
+          <h2 className="text-[34px] lg:text-[40px] font-semibold leading-tight">
             Operational excellence is a performance multiplier.
           </h2>
 
-          <p className="mt-6 text-[12px] leading-[1.75] text-white/82 max-w-[720px] mx-auto">
+          <p className="mt-6 text-[12px] leading-[1.75] text-[#FFFFFFE5] max-w-[720px] mx-auto">
             Documentation, training, competency, compliance, and operational learning are often treated as support
             activities. In reality they directly influence productivity, quality, safety, workforce capability, and long-term
             profitability. OKQ strengthens the operational foundations that enable consistent execution, faster
@@ -92,24 +92,37 @@ const BusinessImpact = () => {
         </div>
       </div>
 
+      <div className="absolute z-10 left-[47%]  top-[290px] w-1 h-1  bg-[#02657e] shadow-[0_0_20px_30px_#02657e] " />
+      <div className="absolute z-10 left-[54%]  top-[310px] w-1 h-1 bg-[#02657e] shadow-[0_0_20px_20px_#02657e] " />
+      <div className="absolute top-[275px] left-1/2 -translate-x-1/2 w-[160px] h-[115px] bg] overflow-hidden">
+          {/* top blue area */}
+          {/* dotted center line */}
+          {/* <div className="absolute top-[47px] left-1/2 -translate-x-1/2 w-full border-t border-dotted border-[#00a8ff]" /> */}
+
+          {/* circle */}
+                  <div className="absolute z-0 left-1/2 -translate-x-1/2 top-0 w-[115px] h-[115px] rounded-full border border-[#FFFFFF]" />
+
+      </div> 
+        <div className="absolute z-40 left-1/2 -translate-x-1/2 top-[275px] w-[115px] h-[115px] rounded-full border  border-t-0 border-l-0 border-r-0 border-[#FFFFFF]" />
       <div
-        className="relative px-6 pb-16 pt-[136px] lg:pb-[72px]"
+        className="relative z-10 px-6 pb-16 pt-[136px] lg:pb-[72px]"
         style={{
           backgroundImage: `linear-gradient(180deg, rgba(3,46,58,0.9), rgba(3,46,58,0.93)), url(${roiPhil})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute left-1/2 top-0 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/60" />
 
-        <div className="relative z-10 max-w-[1125px] mx-auto">
+
+
+        <div className="relative z-30 max-w-[1125px] mx-auto">
           <div className="rounded-md border border-[#00B4D7]/35 bg-[#095A6B]/76 px-5 py-5 shadow-[0_18px_46px_rgba(0,0,0,0.22)] backdrop-blur-md">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y sm:divide-y-0 lg:divide-x divide-white/45">
               {impactCards.map((card) => (
                 <div key={card.id} className="flex min-h-[150px] flex-col items-center px-5 py-3 text-center">
-                  <div className="mb-4 flex h-[70px] w-[70px] items-center justify-center rounded-md border-2 border-white text-[#00D7FF] shadow-[0_0_18px_rgba(255,255,255,0.85)]">
-                    {card.icon}
-                  </div>
+                  <div className="mb-4  rounded-md border-2 border-white text-[#00D7FF] shadow-[-1px_-1px_5px_rgba(255,255,255,0.85)]">
+                    <p className="flex h-[70px] w-[70px] items-center justify-center shadow-[inset_1px_1px_5px_] rounded-md ">{card.icon}</p>
+                  </div> 
                   <h3 className="text-[14px] font-bold text-[#00D7FF]">{card.title}</h3>
                   <p className="mt-1.5 text-[10px] leading-[1.55] text-white/74">{card.description}</p>
                 </div>

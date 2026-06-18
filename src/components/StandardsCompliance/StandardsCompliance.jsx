@@ -1,6 +1,7 @@
 import operationalExcellence from "../../assets/images/operationalExcellance.jpg";
 import roiPhil from "../../assets/images/roiPhil.jpg";
 import sectionBG from "../../assets/images/sectionBG.jpg";
+import backgroundLogoIcon from "../../assets/backgroundLogoIcon.png";
 
 const standardsCards = [
   {
@@ -58,39 +59,39 @@ const kpiItems = [
 
 const StandardsCompliance = () => {
   return (
-    <section id="standards-compliance" className="relative overflow-hidden bg-[#0A4B5B] px-6 py-16 lg:py-20">
-      <div className="absolute -left-48 -top-48 h-[520px] w-[620px] rounded-full border-[120px] border-[#17697A]/35" />
-      <div className="absolute -right-56 -top-16 h-[560px] w-[640px] rounded-full border-[120px] border-[#17697A]/30" />
-      <div className="absolute -bottom-64 left-1/3 h-[520px] w-[620px] rounded-full border-[120px] border-[#17697A]/25" />
+    <section id="standards-compliance" className="relative overflow-hidden bg-[linear-gradient(135deg,#0D2B45_0%,#0A4A5A_50%,#0A3A4A_100%)] w-full ">
 
-      <div className="relative z-10 max-w-6xl mx-auto">
-        <div className="flex items-center justify-center gap-3 mb-6">
+      <div className="  mx-auto max-w-[1230px] flex flex-col items-center ">
+        
+      {/* background images */}
+      <img src={backgroundLogoIcon} alt="" className="absolute object-fill  w-full h-full left-[50%] translate-x-[-50%]  h-[520px] w-[620px] z-0" />
+        <div className=" pt-16 lg:pt-20 flex items-center justify-center gap-3 mb-6">
           <span className="w-5 h-5 rounded-full bg-white flex items-center justify-center text-[#0A8EA5] text-[10px] font-bold shrink-0">
             4
           </span>
           <div className="h-px w-12 bg-white/70" />
-          <span className="text-[13px] font-medium tracking-[0.16em] uppercase text-white">
+          <span className="text-[18px] font- tracking-[0.16em] uppercase text-white">
             Standards &amp; Compliance
           </span>
         </div>
 
-        <h2 className="text-[32px] lg:text-[40px] font-bold text-white text-center leading-tight max-w-4xl mx-auto">
+        <h2 className=" text-[32px] z-20 lg:text-[40px] font-semibold text-white text-center leading-tight max-w-4xl mx-auto">
           Built on standards. Designed for compliance.
           <br />
           Engineered for performance.
         </h2>
 
-        <p className="mt-6 text-center text-[13px] text-white/72 leading-6 max-w-2xl mx-auto">
+        <p className="z-30 mt-6 text-center text-[13px] text-[#FFFFFFB2] leading-6 max-w-2xl mx-auto">
           Compliance should strengthen operations, not slow them down. OKQ is designed around
           globally recognized standards and proven operational disciplines, turning requirements
           into practical systems that strengthen execution and consistency.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className=" max-w-5xl mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 ">
           {standardsCards.map((card) => (
             <article
               key={card.id}
-              className={`overflow-hidden rounded-lg border border-white/10 bg-[#125D6D] shadow-[0_18px_42px_rgba(0,0,0,0.18)] ${
+              className={`z-30  overflow-hidden rounded-lg border border-white/10 bg-[#125D6D] shadow-[0_18px_42px_rgba(0,0,0,0.18)] ${
                 card.wide ? "lg:col-span-2" : ""
               }`}
             >
@@ -109,13 +110,13 @@ const StandardsCompliance = () => {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className=" z-30 pb-16 lg:pb-20 mt-12 text-center">
           <p className="mx-auto max-w-3xl text-[16px] lg:text-[17px] font-medium leading-7 text-white">
             "Compliance should not slow operations. It should strengthen them. OKQ turns standards
             into operational capability."
           </p>
 
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-2 text-[12px] text-white/72">
+          <div className="  mt-7 flex flex-wrap items-center justify-center gap-2 text-[12px] text-white/72">
             <span className="font-bold text-white">KPI Focus:</span>
             {kpiItems.map((item) => (
               <span key={item} className="rounded-full border border-white/18 bg-white/5 px-4 py-1.5">
@@ -126,7 +127,7 @@ const StandardsCompliance = () => {
 
           <a
             href="#okq-compliance"
-            className="mt-8 inline-flex rounded-md border border-white/35 bg-white/5 px-10 py-4 text-[14px] font-bold text-white transition-colors hover:bg-white/12"
+            className=" mt-8 inline-flex rounded-md border border-white/35 bg-white/5 px-10 py-4 text-[14px] font-bold text-white transition-colors hover:bg-white/12"
           >
             Explore OKQ Compliance &amp; Standards
           </a>

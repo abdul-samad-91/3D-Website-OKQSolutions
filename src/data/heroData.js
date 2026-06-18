@@ -1,4 +1,5 @@
 export const heroContent = {
+  topText: "Operational Intelligence Platform",
   headingMain: "Transforming Operational Knowledge into",
   headingHighlight: "Industrial Performance",
   subtitle: "Operational knowledge. Standardized systems. Sustainable performance.",
