@@ -65,7 +65,7 @@ const SixModules = () => {
           The six modules
         </h2>
 
-        <div className="relative hidden lg:block h-[360px]">
+        <div className="relative hidden  overflow-hidden lg:block h-[360px]">
           <svg
             viewBox="0 0 1180 330"
             className="absolute left-[-40px] h-full  w-[1530px]"
