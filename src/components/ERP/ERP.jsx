@@ -4,10 +4,10 @@ import operationalExcellence from "../../assets/images/operationalExcellance.jpg
 import sectionBG from "../../assets/images/sectionBG.jpg";
 import roiPhil from "../../assets/images/roiPhil.jpg";
 
-const imageTiles = [
+const  imageTiles = [
   {
     src: operations,
-    alt: "Industrial automation equipment",
+    alt: "Industrial  automation equipment",
     className: "lg:col-span-4 lg:row-span-3 min-h-[290px] lg:min-h-0 grayscale",
     imageClassName: "object-[52%_center]",
   },
