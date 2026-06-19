@@ -17,10 +17,10 @@ const orbitItems = [
 ];
 
 const captionItems = [
-  { title: "ALIGN KNOWLEDGE", text: "Capture, share, and apply what works.", x: 22, y: 21, icon: "sync" },
-  { title: "DRIVE DISCIPLINE", text: "Standardize execution and ensure compliance.", x: 87, y: 22, icon: "shield" },
-  { title: "BUILD CAPABILITY", text: "Develop skills and strengthen teams.", x: 21, y: 83, icon: "users" },
-  { title: "IMPROVE CONTINUOUSLY", text: "Measure, learn, and advance performance.", x: 81, y: 83, icon: "sync" },
+  { title: "ALIGN KNOWLEDGE", text: "Capture, share, and apply what works.", x: 10, y: 12, icon: "sync" },
+  { title: "DRIVE DISCIPLINE", text: "Standardize execution and ensure compliance.", x: 92, y: 12, icon: "shield" },
+  { title: "BUILD CAPABILITY", text: "Develop skills and strengthen teams.", x: 15, y: 78, icon: "users" },
+  { title: "IMPROVE CONTINUOUSLY", text: "Measure, learn, and advance performance.", x: 79, y: 78, icon: "sync" },
 ];
 
 const SolutionHero = () => (
@@ -77,19 +77,71 @@ const SolutionHero = () => (
         <div className="absolute left-45 rotate-65 top-115 h-[110px] w-[5px]   bg-[#61bacc]" />
         <div className="absolute right-45 rotate-112 top-115 h-[110px] w-[5px]   bg-[#61bacc]" />
 
-        {/* <svg className="absolute inset-0 h-full w-full" viewBox="0 0 700 660" fill="none">
-          <circle cx="350" cy="330" r="212" stroke="#00B4D7" strokeWidth="1.6" />
-          <circle cx="350" cy="330" r="238" stroke="#00B4D7" strokeWidth="1.6" />
-          <path d="M221 138c38-31 82-47 129-47" stroke="#00B4D7" strokeWidth="1.5" />
-          <path d="m253 135 15 5-12 10" stroke="#00B4D7" strokeWidth="1.5" />
-          <path d="M572 201c34 51 48 105 42 163" stroke="#00B4D7" strokeWidth="1.5" />
-          <path d="m615 356 6 14 9-12" stroke="#00B4D7" strokeWidth="1.5" />
-          <path d="M466 553c-71 25-139 20-203-14" stroke="#00B4D7" strokeWidth="1.5" />
-          <path d="m274 552-15-1 8-13" stroke="#00B4D7" strokeWidth="1.5" />
-          <path d="M153 366c-11-70 2-132 40-187" stroke="#00B4D7" strokeWidth="1.5" />
-          <path d="m146 354 7 14 8-13" stroke="#00B4D7" strokeWidth="1.5" />
-          <path d="M350 187v58M274 376l-78 45M426 376l78 45" stroke="#00B4D7" strokeWidth="5" />
-        </svg> */}
+        {/* arrow */}
+        <svg width="24" height="24" className="absolute top-50.5 rotate-250 right-45" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 11L22 2L13 22L10 14L2 11Z" fill="#2EA7C9" />
+        </svg>
+        {/* path */}
+        <svg className="absolute inset-0 h-full w-full bg" viewBox="0 0 700 660" fill="none"> 
+          <path d="M482 55 C540 75 650 190 649 313" stroke="#00B4D7" strokeWidth="1.5" />
+        </svg>
+        {/* arrow */}
+        <svg width="24" height="24" className="absolute top-110 rotate-140 right-10" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 11L22 2L13 22L10 14L2 11Z" fill="#2EA7C9" />
+        </svg>
+        
+        {/* doted lines */}
+        <svg width="80" height="72"  viewBox="0 0 80 72" className="absolute top-50 left-20" fill="none" xmlns="http://www.w3.org/2000/svg" >
+          {/* <!-- Dotted Line --> */}
+          <path d="M15 5 L40 10 L48 60" stroke="#17A8D1" stroke-width="2" stroke-dasharray="2 2" fill="none" />
+
+          {/* <!-- Solid Line --> */}
+            <circle cx="50" cy="66" r="4" fill="#17A8D1" />
+        </svg>
+         <svg width="94" height="109" viewBox="0 0 94 109" className="absolute top-47 right-15" fill="none" xmlns="http://www.w3.org/2000/svg" >
+          {/* Dotted line */}
+          <path d="M60 8 L36 14 L25 70" stroke="#18A9D5" strokeWidth="2" strokeDasharray="2 2" fill="none" />
+          {/* Circle */}
+          <circle cx="23" cy="75" r="4" fill="#18A9D5" />
+        </svg>
+        <svg width="80" height="72"  viewBox="0 0 80 72" className="absolute top-177 right-40 rotate-180" fill="none" xmlns="http://www.w3.org/2000/svg" >
+          {/* <!-- Dotted Line --> */}
+          <path d="M15 5 L40 10 L48 60" stroke="#17A8D1" stroke-width="2" stroke-dasharray="2 2" fill="none" />
+          {/* <!-- Solid Line --> */}
+            <circle cx="50" cy="66" r="4" fill="#17A8D1" />
+        </svg>
+         <svg width="94" height="109" viewBox="0 0 94 109" className="absolute top-170 left-32   rotate-180" fill="none" xmlns="http://www.w3.org/2000/svg" >
+          {/* Dotted line */}
+          <path d="M60 8 L36 14 L25 70" stroke="#18A9D5" strokeWidth="2" strokeDasharray="2 2" fill="none" />
+          {/* Circle */}
+          <circle cx="23" cy="75" r="4" fill="#18A9D5" />
+        </svg>
+
+        {/* arrow */}
+        <svg width="24" height="24" className="absolute top-55 rotate-20 left-46" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 11L22 2L13 22L10 14L2 11Z" fill="#2EA7C9" />
+        </svg>
+        {/* path */}
+        <svg className="absolute  right- rotate-247 h-full w-full bg" viewBox="0 0 700 660" fill="none"> 
+          <path d="M482 55 C540 75 650 190 649 313" stroke="#00B4D7" strokeWidth="1.5" />
+        </svg>
+        {/* arrow */}
+        <svg width="24" height="24" className="absolute top-110 rotate-130 left-5.5" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 11L22 2L13 22L10 14L2 11Z" fill="#2EA7C9" />
+        </svg>
+
+        {/* arrow */}
+        <svg width="24" height="24" className="absolute top-170.5 rotate-0 right-38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 11L22 2L13 22L10 14L2 11Z" fill="#2EA7C9" />
+        </svg>
+        {/* path */}
+        <svg className="absolute rotate-130 inset-0 h-full w-full bg" viewBox="0 0 700 660" fill="none"> 
+          <path d="M432 45 C540 75 650 190 649 313" stroke="#00B4D7" strokeWidth="1.5" />
+        </svg>
+        {/* arrow */}
+        <svg width="24" height="24" className="absolute top-166.5 rotate-270 left-36.5" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 11L22 2L13 22L10 14L2 11Z" fill="#2EA7C9" />
+        </svg>
 
           {/* center circle okq solutions */}
         <div className="absolute left-1/2 top-1/2 flex h-[176px] w-[176px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border-2 border-[#61bacc] bg-white text-center shadow-[0_0_5px_#66c3d6]">
