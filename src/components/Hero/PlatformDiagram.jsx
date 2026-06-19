@@ -43,24 +43,10 @@ const moduleIcons = {
   ),
 };
 
-const ModuleNode = ({ icon, name, description, descMaxWidth = "auto" }) => (
-  <div className="flex flex-col items-center ">
-    <div className="w-[45px] h-[45px] rounded-full bg-[#02667E] text-white flex items-center justify-center shadow-[0_4px_12px_rgba(2,102,126,0.25)]">
-      {icon}
-    </div>
-    <p className="text-[12px] font-bold text-[#1a2e35] pt-[1px] tracking-wide">{name}</p>
-    <p
-      className="text-[10px] text-gray-500 text-center leading-tight"
-      style={{ maxWidth: descMaxWidth }}
-    >
-      {description}
-    </p>
-  </div>
-);
-
 const PlatformDiagram = () => {
   return (
     <div className="relative flex flex-col gap-12 w-[1020px] h-[800px]">
+      <div className="hidden" aria-hidden="true">{moduleIcons.ACADEMY}</div>
       {/* ====== INTELLIGENCE LAYER ====== */}
       <div className="relative w-full top-32 h-[170px] p-[2px] rounded-[200%] bg-gradient-to-br from-[#02667E] to-[#E4F0F9]">
         <div className="relative  w-full h-full rounded-[200%] bg-[#F0F9FB]">
@@ -76,25 +62,6 @@ const PlatformDiagram = () => {
               </div>
             </div>
 
-            {/* ACADEMY - top-left of upper ellipse */}
-            <div className="absolute top-[-5px] left-[110px] z-10">
-              <ModuleNode icon={moduleIcons.ACADEMY} name="ACADEMY" description="Learning" />
-            </div>
-
-            {/* INSIGHT - top-right of upper ellipse */}
-            <div className="absolute top-[-5px] right-[90px] z-10">
-              <ModuleNode icon={moduleIcons.INSIGHT} name="INSIGHT" description="Workforce Intelligence" />
-            </div>
-
-            {/* CORE - bottom-left of upper ellipse */}
-            <div className="absolute bottom-[-50px] left-[50px] z-10">
-              <ModuleNode icon={moduleIcons.CORE} name="CORE" description="Knowledge Management" />
-            </div>
-
-            {/* GUARD - bottom-right of upper ellipse */}
-            <div className="absolute bottom-[-40px] right-[65px] z-10">
-              <ModuleNode icon={moduleIcons.GUARD} name="GUARD" description="Compliance & Risk" />
-            </div>
         </div>
       </div>
 
@@ -112,25 +79,6 @@ const PlatformDiagram = () => {
             </p>
           </div>
 
-          {/* FLOW - left of lower ellipse */}
-          <div className="absolute top-[30px] left-[-45px] z-10">
-            <ModuleNode icon={moduleIcons.FLOW} name="FLOW" description="Process & Execution" />
-          </div>
-
-          {/* RESOLVE - right of lower ellipse */}
-          <div className="absolute top-[30px] right-[-65px] z-10">
-            <ModuleNode
-              icon={moduleIcons.RESOLVE}
-              name="RESOLVE"
-              description="Troubleshooting & Problem Solving"
-              descMaxWidth="120px"
-            />
-          </div>
-
-          {/* PULSE - center between ops & foundation */}
-          <div className="absolute bottom-[-60px] left-1/2 -translate-x-1/2 z-10">
-            <ModuleNode icon={moduleIcons.PULSE} name="PULSE" description="Continuous Improvement" />
-          </div>
         </div>
       </div>
 
@@ -268,8 +216,8 @@ const PlatformDiagram = () => {
 
       
       <div className="relative flex flex-col  items-center ">
-        {/* left side lines  */}
-        <div className="">
+        {/* left side foundation callouts hidden so hero visual keeps only the OKQ logo mark */}
+        <div className="hidden">
           <div className="absolute top-[-150px] left-0  w-[120px] ">
             <p className="relative top-10 left-[-15px] text-[10px] text-[#00B4D7]">Unified Data</p>
             <div className="relative top-7 left-12 z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
@@ -344,7 +292,7 @@ const PlatformDiagram = () => {
           </div>
         </div>
         <p  className="text-[10.56px] text-white py-2 rounded-b-full px-8 relative top-[-50px] bg-[linear-gradient(180deg,#04798A_0%,#04798A_45%,#00AFCF_100%)] tracking-[0.5px] font-700 z-30">OKQ DIGITAL FOUNDATION</p>
-        <div>
+        <div className="hidden">
           <div className="absolute top-[-150px] right-0  w-[120px] ">
             <p className="relative top-10 right-[-50px] text-[10px] text-[#00B4D7]">Any Device</p>
             <div className="relative top-7 left-9 z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
