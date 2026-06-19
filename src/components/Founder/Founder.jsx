@@ -39,12 +39,12 @@ const Founder = () => {
             7
           </span>
           <div className="h-px w-12 bg-[#00A8C8]" />
-          <span className="text-[13px] font-medium uppercase tracking-[0.16em] text-[#00A8C8]">
+          <span className="text-[18px] font-medium uppercase tracking-[0.16em] text-[#00A8C8]">
             Founder Vision
           </span>
         </div>
 
-        <h2 className="mx-auto max-w-4xl text-center text-[36px] font-bold leading-tight text-[#0d1b2a] lg:text-[46px]">
+        <h2 className="mx-auto max-w-6xl text-center text-[36px] font-semibold leading-tight text-[#0d1b2a] lg:text-[40px]">
           Reimagining how industry learns, performs, and improves.
         </h2>
 
@@ -68,8 +68,8 @@ const Founder = () => {
                   className="relative flex w-full items-center justify-between gap-5 px-8 py-6 text-left"
                   onClick={() => setOpenIndex(isOpen ? -1 : index)}
                 >
-                  <span className="font-bold text-[15px] text-[#02667E]">{item.title}</span>
-                  <span className="pointer-events-none absolute right-0 top-0 h-full w-[130px] rounded-l-full bg-[#D9F3F7]" />
+                  <span className="font-bold text-[15px] text-[#060b0c]">{item.title}</span>
+                  <span className="pointer-events-none absolute right-[-10px] top-[-90px] h-[200px] w-[130px] rounded-l-full bg-[linear-gradient(135deg,#00B4D733_0%,#00000000_100%)]" />
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className={`relative z-10 h-5 w-5 shrink-0 text-[#02667E] transition-transform ${isOpen ? "rotate-180" : ""}`}
@@ -120,7 +120,7 @@ const Founder = () => {
           </a>
         </div>
 
-        <p className="mt-6 text-center text-[12px] text-[#02667E]">
+        <p className="mt-6 text-center text-[12px] text-[#00B4D7]">
           Or run the Operational Maturity Assessment&trade;
         </p>
       </div>

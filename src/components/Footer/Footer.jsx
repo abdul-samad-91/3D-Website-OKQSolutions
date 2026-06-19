@@ -70,9 +70,9 @@ const SocialIcon = ({ type }) => {
 const Footer = () => {
   return (
     <footer className="bg-white px-6 py-14 lg:py-16">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid gap-12 lg:grid-cols-[1.7fr_repeat(4,1fr)]">
-          <div>
+      <div className="max-w-[1230px] mx-auto">
+        <div className="grid gap-12 lg:grid-cols-13">
+          <div className="lg:col-span-5">
             <Link to="/" className="inline-flex">
               <img src={Logo} alt="OKQ Solutions" className="h-9 w-auto" />
             </Link>
@@ -82,7 +82,7 @@ const Footer = () => {
             <p className="mt-5 max-w-md text-[14px] font-semibold leading-6 text-[#0d1b2a]">
               Transforming Operational Knowledge into Industrial Performance
             </p>
-            <div className="mt-8 flex items-center gap-4 text-[#4D5A60]">
+            <div className="mt-6 flex items-center gap-4 text-[#4D5A60]">
               {["linkedin", "twitter", "mail"].map((item) => (
                 <a key={item} href="/contactUs" className="transition-colors hover:text-[#00A8C8]" aria-label={item}>
                   <SocialIcon type={item} />
@@ -92,9 +92,9 @@ const Footer = () => {
           </div>
 
           {footerColumns.map((column) => (
-            <div key={column.title}>
-              <h3 className="text-[13px] font-bold text-[#0d1b2a]">{column.title}</h3>
-              <ul className="mt-5 space-y-4">
+            <div key={column.title} className="lg:col-span-2">
+              <h3 className="text-[13px]  font-bold text-[#0d1b2a]">{column.title}</h3>
+              <ul className="mt-5 space-y-2">
                 {column.links.map((link) => (
                   <li key={link.label}>
                     <Link to={link.href} className="text-[13px] text-[#4D5A60] transition-colors hover:text-[#00A8C8]">

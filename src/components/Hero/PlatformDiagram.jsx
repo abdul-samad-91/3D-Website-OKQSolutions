@@ -211,80 +211,80 @@ const PlatformDiagram = () => {
   </svg> 
 </div>
     </div>
-      <div className="absolute left-75 rotate-35 bottom-[210px] bg-black w-[25px] h-[150px] shadow-[20px_0_30px_9px_#00B4D7]"> </div>
-      <div className="absolute right-77 rotate-145 bottom-[210px] bg-black w-[25px] h-[150px] shadow-[20px_0_30px_10px_#00B4D7]"> </div> 
+      <div className="absolute left-85 rotate-35 bottom-[210px] bg-black w-[25px] h-[150px] shadow-[20px_0_30px_9px_#00B4D7]"> </div>
+      <div className="absolute right-85 rotate-145 bottom-[210px] bg-black w-[25px] h-[150px] shadow-[20px_0_30px_10px_#00B4D7]"> </div> 
 
       
       <div className="relative flex flex-col  items-center ">
         {/* left side foundation callouts hidden so hero visual keeps only the OKQ logo mark */}
         <div className="hidden">
           <div className="absolute top-[-150px] left-0  w-[120px] ">
-            <p className="relative top-10 left-[-15px] text-[10px] text-[#00B4D7]">Unified Data</p>
-            <div className="relative top-7 left-12 z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
+            <p className="relative top-4 left-1 text-[10px] text-[#00B4D7]">Unified Data</p>
+            <div className="relative top-1 left-16 z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
             <svg
-              viewBox="0 45 300 100"
-              className="absolute top-[38px] left-[50px] inset-0 w-full h-[80px]"
+              viewBox="0 45 250 80"
+              className="absolute top-[38px] left-[40px] rotate-15 w-[180px] h-[100px]"
               fill="none"
             >
               <path
-                d="M20 20 C120 20, 180 180, 280 180"
-                stroke="#00B4D7"
-                strokeWidth="3"
-                strokeDasharray="6 6"
-                strokeLinecap="round"
-                fill="none"
-              />
-            </svg>
-          </div>
-          <div className="absolute top-[-130px] left-0  w-[120px] ">
-            <p className="relative top-12 left-[-30px] text-[10px] text-[#00B4D7]">Enterprise Security</p>
-            <div className="relative top-9 left-16 z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
-            <svg
-              viewBox="0 65 300 100"
-              className=" absolute rotate-350 top-[40px] left-[67px] inset-0 w-[101px] h-[80px]"
-              fill="none"
-            >
-              <path
-                d="M20 20 C120 20, 180 180, 280 180"
-                stroke="#00B4D7"
-                strokeWidth="3"
-                strokeDasharray="6 6"
-                strokeLinecap="round"
-                fill="none"
-              />
-            </svg>
-          </div>
-          <div className="absolute top-[-130px] left-0  w-[120px] ">
-            <p className="relative top-18.5 left-[15px] text-[10px] text-[#00B4D7]">Cloud Native</p>
-            <div className="relative top-15.5 left-20 z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
-            <svg
-              viewBox="0 65 250 100"
-              className=" absolute rotate-[-10] top-[77px] left-[87px] inset-0 w-[101px] h-[80px]"
-              fill="none"
-            >
-              <path
-                d="M-90 -30 C80 120, 180 20, 280 120"
-                stroke="#00B4D7"
-                strokeWidth="3"
-                strokeDasharray="6 6"
-                strokeLinecap="round"
-                fill="none"
-              />
-            </svg>
-          </div>
-          <div className="absolute top-[-130px] left-0  w-[120px] ">
-            <p className="relative top-24 left-[-43px] text-[10px] text-[#00B4D7]">Realtime Analytics</p>
-            <div className="relative top-21 left-10 z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
-            <svg
-              viewBox="0 65 250 100"
-              className=" absolute rotate-160 top-[47px] left-[40px] inset-0 w-[151px] h-[80px]"
-              fill="none"
-            >
-              <path
-                d="M20 20 C80 120, 180 40, 380 220"
+                d="M20 20 C120 20, 120 80, 500 180"
                 stroke="#00B4D7"
                 strokeWidth="2"
-                strokeDasharray="2 6"
+                strokeDasharray="6 6"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </svg>
+          </div>
+          <div className="absolute top-[-130px] left-0  w-[120px] ">
+            <p className="relative top-11 left-[-19px] text-[10px] text-[#00B4D7]">Enterprise Security</p>
+            <div className="relative top-8 left-16 z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
+            <svg
+              viewBox="0 45 250 80"
+              className="absolute top-[48px] left-[60px] rotate-0 w-[180px] h-[100px]"
+              fill="none"
+            >
+              <path
+                d="M20 20 C120 20, 120 80, 500 180"
+                stroke="#00B4D7"
+                strokeWidth="2"
+                strokeDasharray="6 6"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </svg>
+          </div>
+          <div className="absolute top-[-130px] left-0  w-[120px] ">
+            <p className="relative top-18.5 left-[20px] text-[10px] text-[#00B4D7]">Cloud Native</p>
+            <div className="relative top-15.5 left-20 z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
+            <svg
+              viewBox="0 65 300 50"
+              className=" absolute  rotate-355 top-[45px] left-[87px] inset-0 w-[180px] h-[100px]"
+              fill="none"
+            >
+              <path
+                d="M-90 -30 C80 180, 180 20, 500 180"
+                stroke="#00B4D7"
+                strokeWidth="2.5"
+                strokeDasharray="6 6"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </svg>
+          </div>
+          <div className="absolute top-[-130px] left-0  w-[120px] ">
+            <p className="relative top-30 left-[-43px] text-[10px] text-[#00B4D7]">Realtime Analytics</p>
+            <div className="relative top-27 left-10 z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
+            <svg
+              viewBox="0 45 250 80"
+              className="absolute  top-[82px] left-[40px] rotate-330 w-[180px] h-[100px]"
+              fill="none"
+            >
+              <path
+                d="M20 20 C120 20, 120 80, 500 180"
+                stroke="#00B4D7"
+                strokeWidth="2"
+                strokeDasharray="6 6"
                 strokeLinecap="round"
                 fill="none"
               />
@@ -294,17 +294,17 @@ const PlatformDiagram = () => {
         <p  className="text-[10.56px] text-white py-2 rounded-b-full px-8 relative top-[-50px] bg-[linear-gradient(180deg,#04798A_0%,#04798A_45%,#00AFCF_100%)] tracking-[0.5px] font-700 z-30">OKQ DIGITAL FOUNDATION</p>
         <div className="hidden">
           <div className="absolute top-[-150px] right-0  w-[120px] ">
-            <p className="relative top-10 right-[-50px] text-[10px] text-[#00B4D7]">Any Device</p>
-            <div className="relative top-7 left-9 z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
+            <p className="relative top-4.5 right-[-40px] text-[10px] text-[#00B4D7]">Any Device</p>
+            <div className="relative top-1.5 left-7 z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
             <svg
-              viewBox="0 45 300 100"
-              className="absolute top-[37px] right-19 rotate-120  0 w-full h-[80px]"
+              viewBox="0 45 250 80"
+              className="absolute  top-[18px] right-19 rotate-125   w-[170px] h-[80px]"
               fill="none"
             >
               <path
-                d="M20 20 C80 120, 180 20, 280 120"
+                d="M20 20 C115 120, 180 20, 500 180"
                 stroke="#00B4D7"
-                strokeWidth="3"
+                strokeWidth="2"
                 strokeDasharray="6 6"
                 strokeLinecap="round"
                 fill="none"
@@ -315,12 +315,12 @@ const PlatformDiagram = () => {
             <p className="relative top-16.5 right-[-40px] text-[10px] text-[#00B4D7]">Global Scalability</p>
             <div className="relative top-13.5 left-7 z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
             <svg
-              viewBox="0 45 300 100"
-              className="absolute top-[55px] right-21 rotate-125  0 w-[100px] h-[80px]"
+              viewBox="0 45 250 80"
+              className="absolute  top-[42px] right-23 rotate-145   w-[130px] h-[80px]"
               fill="none"
             >
               <path
-                d="M20 20 C80 120, 180 20, 280 150"
+                d="M2 20 C115 120, 250 20, 500 180"
                 stroke="#00B4D7"
                 strokeWidth="3"
                 strokeDasharray="6 6"
@@ -333,8 +333,8 @@ const PlatformDiagram = () => {
             <p className="relative top-19.25 right-[-28px] text-[10px] text-[#00B4D7]">Seamless Integrations</p>
             <div className="relative top-16.5 right-[-17px] z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
             <svg
-              viewBox="0 65 300 100"
-              className=" absolute rotate-123 top-[61px] right-27  w-[101px] h-[80px]"
+              viewBox="0 45 250 80"
+              className=" absolute rotate-133 top-[47px] right-27   w-[120px] h-[100px]"
               fill="none"
             >
               <path
@@ -348,17 +348,17 @@ const PlatformDiagram = () => {
             </svg>
           </div>
           <div className="absolute top-[-150px] right-0  w-[120px] ">
-            <p className="relative top-30 right-[-50px] text-[10px] text-[#00B4D7]">Agentic Powered</p>
-            <div className="relative top-27.5 right-[-40px] z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
+            <p className="relative top-35 right-[-73px] text-[10px] text-[#00B4D7]">Agentic Powered</p>
+            <div className="relative top-32 right-[-60px] z-20 p-1 h-1 w-1 rounded-full bg-[#00B4D7]"></div>
             <svg
-              viewBox="0 45 300 100"
-              className="absolute rotate-135 top-[92px] right-[80px]  w-full h-[80px]"
+              viewBox="0 45 250 80"
+              className="absolute   top-[81px] right-9 rotate-177   w-[170px] h-[72px]"
               fill="none"
             >
               <path
-                d="M-40 -50 C120 20, 180 180, 230 180"
+                d="M20 20 C115 120, 180 20, 500 180"
                 stroke="#00B4D7"
-                strokeWidth="3"
+                strokeWidth="2"
                 strokeDasharray="6 6"
                 strokeLinecap="round"
                 fill="none"

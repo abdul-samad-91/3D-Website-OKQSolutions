@@ -89,14 +89,90 @@ const IntelligenceLoop = () => {
   const nodeSize = 74;
 
   return (
-    <div className="relative w-full max-w-[620px] mx-auto" style={{ aspectRatio: "1 / 1" }}>
+    <div className="relative w-full max-w-[620px] mx-auto overflow-visible" style={{ aspectRatio: "1 / 1" }}>
+      <style>
+        {`
+          @keyframes intelligenceLoopRotate {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(-360deg);
+            }
+          }
+
+          @keyframes intelligenceLoopStayUpright {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(360deg);
+            }
+          }
+
+          .intelligence-loop-orbit {
+            animation: intelligenceLoopRotate 24s linear infinite;
+            transform-box: view-box;
+            transform-origin: ${cx}px ${cy}px;
+            will-change: transform;
+          }
+
+          .intelligence-loop-upright {
+            animation: intelligenceLoopStayUpright 24s linear infinite;
+            transform-box: fill-box;
+            transform-origin: center;
+            will-change: transform;
+          }
+        `}
+      </style>
       <svg
         viewBox="0 0 600 600"
-        className="absolute inset-0 h-full w-full"
+        className="absolute inset-0 h-full w-full overflow-visible"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <circle cx={cx} cy={cy} r={orbitRadius} stroke="#63BFD0" strokeWidth="1.2" opacity="0.75" />
+        <g className="intelligence-loop-orbit">
+          <circle cx={cx} cy={cy} r={orbitRadius} stroke="#63BFD0" strokeWidth="1.2" opacity="0.75" />
+
+          {loopNodes.map((node) => {
+            const pos = polarToCartesian(cx, cy, orbitRadius, node.angle);
+            const labelRadius = orbitRadius + 68;
+            const label = polarToCartesian(cx, cy, labelRadius, node.angle);
+            const textAnchor = node.angle === 270 || node.angle === 90 ? "middle" : label.x > cx ? "start" : "end";
+            const baseline = node.angle === 270 ? "auto" : node.angle === 90 ? "hanging" : "middle";
+
+            return (
+              <g key={node.id}>
+                <g transform={`translate(${pos.x}, ${pos.y})`}>
+                  <g className="intelligence-loop-upright">
+                    <rect x={-nodeSize / 2} y={-nodeSize / 2} width={nodeSize} height={nodeSize} rx="8" fill="#08AFCB" />
+                    <g className="text-white" transform="translate(-12, -12)">
+                      <svg viewBox="0 0 24 24" width="24" height="24">
+                        {nodeIcon(node.icon)}
+                      </svg>
+                    </g>
+                  </g>
+                </g>
+                <g transform={`translate(${label.x}, ${node.angle === 270 ? label.y - 8 : node.angle === 90 ? label.y + 8 : label.y})`}>
+                  <text
+                    className=" intelligence-loop-upright"
+                    x="0"
+                    y="0"
+                    textAnchor={textAnchor}
+                    dominantBaseline={baseline}
+                    fill="#00A8C8"
+                    fontSize="13"
+                    fontWeight="700"
+                    fontFamily="system-ui, sans-serif"
+                    bg="black"
+                  >
+                    {node.label}
+                  </text>
+                </g>
+              </g>
+            );
+          })}
+        </g>
 
         <text
           x={cx}
@@ -109,44 +185,6 @@ const IntelligenceLoop = () => {
         >
           OKQ
         </text>
-
-        {loopNodes.map((node) => {
-          const pos = polarToCartesian(cx, cy, orbitRadius, node.angle);
-          const labelRadius = orbitRadius + 68;
-          const label = polarToCartesian(cx, cy, labelRadius, node.angle);
-          const textAnchor = node.angle === 270 || node.angle === 90 ? "middle" : label.x > cx ? "start" : "end";
-          const baseline = node.angle === 270 ? "auto" : node.angle === 90 ? "hanging" : "middle";
-
-          return (
-            <g key={node.id}>
-              <rect
-                x={pos.x - nodeSize / 2}
-                y={pos.y - nodeSize / 2}
-                width={nodeSize}
-                height={nodeSize}
-                rx="8"
-                fill="#08AFCB"
-              />
-              <g className="text-white" transform={`translate(${pos.x - 12}, ${pos.y - 12})`}>
-                <svg viewBox="0 0 24 24" width="24" height="24">
-                  {nodeIcon(node.icon)}
-                </svg>
-              </g>
-              <text
-                x={label.x}
-                y={node.angle === 270 ? label.y - 8 : node.angle === 90 ? label.y + 8 : label.y}
-                textAnchor={textAnchor}
-                dominantBaseline={baseline}
-                fill="#00A8C8"
-                fontSize="13"
-                fontWeight="700"
-                fontFamily="system-ui, sans-serif"
-              >
-                {node.label}
-              </text>
-            </g>
-          );
-        })}
       </svg>
     </div>
   );

@@ -2,8 +2,8 @@ import IntelligenceLoop from "../IntelligenceLoop/IntelligenceLoop";
 
 const OperatingModel = () => {
   return (
-    <section className="bg-white px-6 py-16 lg:py-20">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.82fr_1.18fr] gap-10 lg:gap-16 items-center">
+    <section className="bg-white z-10 px-6 py-16 lg:py-20">
+      <div className="max-w-[1230px] mx-auto grid lg:grid-cols-[0.82fr_1.18fr] gap-10 lg:gap-16 items-center">
         <div>
           <div className="flex items-center gap-3 mb-7">
             <span
@@ -13,7 +13,7 @@ const OperatingModel = () => {
               2
             </span>
             <div className="h-px w-12 bg-[#00B4D7]" />
-            <span className="text-[13px] font-medium tracking-[0.16em] uppercase text-[#00A8C8]">
+            <span className="text-[18px] font-medium tracking-[0.16em] uppercase text-[#00B4D7]">
               The OKQ Operating Model
             </span>
           </div>
